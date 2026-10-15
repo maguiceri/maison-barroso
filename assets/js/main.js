@@ -521,8 +521,10 @@ function initMarquees() {
 
   $$("[data-marquee-scrub]").forEach((el) => {
     const dir = parseFloat(el.dataset.marqueeScrub);
-    gsap.fromTo(el, { xPercent: dir < 0 ? 10 : -25 }, {
-      xPercent: dir < 0 ? -35 : 10, ease: "none",
+    // a gentle sideways drift that never pushes the words off screen
+    const room = () => Math.max(0, (window.innerWidth - el.offsetWidth) / 2 - 16);
+    gsap.fromTo(el, { x: () => room() * dir }, {
+      x: () => -room() * dir, ease: "none", invalidateOnRefresh: true,
       scrollTrigger: { trigger: el.closest("section"), start: "top bottom", end: "bottom top", scrub: true },
     });
   });

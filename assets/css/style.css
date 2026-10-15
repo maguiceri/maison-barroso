@@ -789,17 +789,15 @@ h1, h2, h3, h4, p, figure { margin: 0; }
    LIFESTYLE BAND
    ========================================================= */
 .band { position: relative; padding: clamp(90px, 12vw, 160px) 0; overflow: hidden; }
-.band__words { display: flex; flex-direction: column; gap: 6px; position: relative; z-index: 2; pointer-events: none; }
+.band__words { display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; z-index: 2; pointer-events: none; padding: 0 var(--gutter); text-align: center; }
 .band__line {
-  display: block; white-space: nowrap;
-  font-family: var(--f-display); font-size: clamp(48px, 10vw, 160px); line-height: 1;
+  display: block; width: max-content; max-width: 100%;
+  font-family: var(--f-display); font-size: clamp(22px, 6.2vw, 116px); line-height: 1.05;
   text-transform: uppercase; letter-spacing: .02em; color: var(--wine-800);
-  padding-left: 8vw;
 }
 .band__line--script {
   font-family: var(--f-script); text-transform: none; letter-spacing: 0;
-  font-size: clamp(56px, 9vw, 150px); color: var(--wine-500);
-  padding-left: 30vw;
+  font-size: clamp(28px, 6.4vw, 120px); line-height: 1.15; color: var(--wine-500);
 }
 .band__imgs { position: relative; height: clamp(380px, 52vw, 720px); margin-top: -4vw; }
 .band__img { position: absolute; overflow: hidden; border-radius: var(--radius); box-shadow: 0 30px 70px rgba(58, 10, 18, .25); }
